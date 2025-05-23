@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { articles, loading, showingLatest, loadLatestArticles, querySearchArticles } from "$lib/stores/news";
+  import { error, articles, loading, showingLatest, loadLatestArticles, querySearchArticles } from "$lib/stores/news";
   import Loading from "$lib/components/Loading.svelte";
   import NewsArticleComponent from "$lib/components/NewsArticle.svelte";
   import SearchInput from "$lib/components/SearchInput.svelte";
@@ -29,10 +29,17 @@
     {#if $loading}
       <div class="pt-5 text-center"><Loading /></div>
     {:else}
-      {#if $articles.length == 0}
-        <div class="pt-5 text-center"><h2 class="text-2xl font-bold text-gray-900">No Articles Found</h2></div>
+      {#if $error.length > 0}
+        <div class="pt-5 text-center text-red-600">
+          <h2 class="text-2xl font-bold">{$error}</h2>
+          <p>Please check your internet connection. (and check your running the .net server locally.)</p>
+        </div>
+      {:else if $articles.length == 0}
+        <div class="pt-5 text-center">
+          <h2 class="text-2xl font-bold text-gray-900">No Articles Found</h2>
+        </div>
       {:else}
-        {#each $articles as article (article.url)} 
+        {#each $articles as article (article.url)}
           <NewsArticleComponent {article} />
         {/each}
       {/if}

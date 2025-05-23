@@ -1,6 +1,6 @@
 # News Portal Front end
 
-This is a front end for the news portal project. It used SvelteKit, along with 
+This is a front end for the news portal project. It uses SvelteKit, along with 
 - [DaisyUI](https://daisyui.com/) for common ui components.
 - [TailWind CSS](https://tailwindcss.com/) for the CSS framework.
 Follow these steps to build and run the app using Docker.
