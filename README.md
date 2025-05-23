@@ -1,38 +1,34 @@
-# sv
+# News Portal Front end
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+This is a front end for the news portal project. It used SvelteKit, along with 
+- [DaisyUI](https://daisyui.com/) for common ui components.
+- [TailWind CSS](https://tailwindcss.com/) for the CSS framework.
+Follow these steps to build and run the app using Docker.
 
-## Creating a project
+## Prerequisites
 
-If you're seeing this, you've probably already done this step. Congrats!
+- [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed on your machine
+- [node](https://nodejs.org/en) installed on your machine
+
+---
+
+### 1. Clone the repository and move to Directory
 
 ```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
+git clone https://github.com/Olster1/news_portal_frontend.git
+cd news_portal_frontend
 ```
 
-## Developing
+### 2. Install Dependencies
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+```bash
+npm install
+```
+
+### 3. Run locally
 
 ```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+You can access the front end at [localhost:5173/](http://localhost:5173)
