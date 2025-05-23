@@ -1,1 +1,1 @@
-export const API_BACKEND_BASE_URL = import.meta.env.VITE_API_BASE_URL; //NOTE: Get the appropriate backend url from the .env file
+export const API_BACKEND_BASE_URL : string = "http://localhost:5001";

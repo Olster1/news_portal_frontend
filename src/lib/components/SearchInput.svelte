@@ -1,15 +1,47 @@
+<!-- //NOTE: 
+This is a resusable DUMB search component that takes a onSearch and onClear function as params. 
+This doesn't do debouncing. Depending on the project, we may want all our searches to have debouncing,
+or have another resuable DUMB search that has debouncing. 
+-->
+<script lang="ts">
+  export let onSearch: (query: string) => void;
+  export let onClear: () => void;
+
+  let searchQuery: string = "";
+
+  function handleKeydown(event: KeyboardEvent) {
+    if (event.key === 'Enter' && searchQuery.trim()) {
+      onSearch(searchQuery.trim());
+    }
+  }
+
+  //NOTE: When user clears the input, we might want to do a clear of a search or something else.
+  //NOTE: This triggers when they press the clear X on the input, but also when they backspace the string. 
+  //NOTE: We might want to do more so it only does it when we press the clear button.
+  function checkEmpty() {
+    if(!searchQuery.trim()) {
+      onClear();
+    }
+  }
+
+  function handleButtonClick() {
+    let s : string = searchQuery.trim();
+    if (s.length > 0) { //NOTE: Check if the string is not empty
+      onSearch(s);
+    } 
+  }
+</script>
+
 <label class="input" style="width: 100%">
-  <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-    <g
-      stroke-linejoin="round"
-      stroke-linecap="round"
-      stroke-width="2.5"
-      fill="none"
-      stroke="currentColor"
-    >
-      <circle cx="11" cy="11" r="8"></circle>
-      <path d="m21 21-4.3-4.3"></path>
-    </g>
-  </svg>
-  <input type="search" required placeholder="Search" />
+   <input
+    type="search"
+    required
+    placeholder="Search"
+    bind:value={searchQuery}
+    on:input={checkEmpty}
+    on:keydown={handleKeydown}
+  />
+  <button on:click={handleButtonClick} aria-label="Search" type="button">
+    🔍
+  </button>
 </label>
