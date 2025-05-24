@@ -1,5 +1,4 @@
 <script>
-  import "../style.css";
 </script>
 
 <svelte:head>

@@ -1,5 +1,4 @@
 <script lang="ts">
-	import "../style.css";
 	import { page } from '$app/state';
 </script>
 

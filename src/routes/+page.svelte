@@ -1,5 +1,4 @@
 <script lang="ts">
-  import "../style.css";
   import { onMount } from "svelte";
   import { error, articles, loading, showingLatest, loadLatestArticles, querySearchArticles } from "$lib/stores/news";
   import Loading from "$lib/components/Loading.svelte";
