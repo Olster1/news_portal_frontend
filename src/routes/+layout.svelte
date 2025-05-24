@@ -3,7 +3,7 @@
 	  import '../app.css';
       import "../style.css";
 	
-	  export let children;
+	  let { children } = $props();
 </script>
 
 <Navbar />
