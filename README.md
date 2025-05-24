@@ -28,10 +28,11 @@ npm install
 ### 3. Run locally
 
 ```bash
-npm run dev
+npm run build
+npm run preview
 ```
 
-You can access the front end at [localhost:5173/](http://localhost:5173)
+You can access the front end at [localhost:4173/](http://localhost:4173)
 
 ### 3. Testing
 
