@@ -32,3 +32,10 @@ npm run dev
 ```
 
 You can access the front end at [localhost:5173/](http://localhost:5173)
+
+### 3. Testing
+
+You can run tests using 
+```bash
+npm test
+```
