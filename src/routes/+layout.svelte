@@ -5,4 +5,4 @@
 </script>
 
 <Navbar />
-<!-- <slot /> -->
+<slot />
